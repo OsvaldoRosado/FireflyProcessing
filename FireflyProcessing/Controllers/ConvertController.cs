@@ -88,7 +88,7 @@ namespace FireflyProcessing.Controllers
 
                     // Upload to Azure Blob Service
                     UploadFolderToAzure(convertedDir);
-                    var numSlides = (Directory.GetFiles(convertedDir).Length - 1) / 2;
+                    var numSlides = Directory.GetFiles(convertedDir, "*.jpg").Length;
 
                     var pubId = id + "-" + numSlides;
 
